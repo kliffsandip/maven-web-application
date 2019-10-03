@@ -26,8 +26,6 @@ stage('checkout')
 git credentialsId: '9fe29b2d-e86c-4f2b-9286-199312bc2ea8', url: 'https://github.com/kliffsandip/maven-web-application.git'
 }
 
-/*
-
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
@@ -47,9 +45,6 @@ sshagent(['3282d63e-5936-4959-a6be-1eae9cf82429']){
 sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.100.186:/opt/apache-tomcat-9.0.26/webapps/maven-web-application.war"
 }
 }
-
-
-*/
 
 
 stage('EmailNotification'){
